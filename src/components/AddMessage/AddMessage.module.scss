@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 .new_message {
     position: fixed;
     bottom: 0;
     width: 100%;
     padding: 5px;
-    margin-left: 0px;
     border-top: 1px solid #3f3f3f;
     height: 50px;
+    padding-bottom: 17px;
 }
 
 .message_input{
@@ -14,4 +16,5 @@
     height: 100%;
     margin: 0;
     padding: 5px;
+
 }

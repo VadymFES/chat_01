@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Aside from '@/components/Aside/Aside'
 import AddMessage from '@/components/AddMessage/AddMessage'
+import MessageList from '@/components/MessageList/MessageList'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -17,11 +18,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-       <Aside />
-    <section className= {styles.container}>
-<AddMessage />
-    </section>
-
+        <Aside />
+        <section className={styles.container}>
+          <MessageList />
+          <AddMessage />
+        </section>
       </main>
     </>
   )
