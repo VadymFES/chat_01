@@ -4,7 +4,7 @@
   grid-template-areas: "sidebar main";
   width: 100vh;
   height: 100vh;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Press Start 2P';
 }
 
 .container {
