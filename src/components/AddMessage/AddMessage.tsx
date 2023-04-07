@@ -1,10 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./AddMessage.module.scss";
 
-export default function AddMessage() {
-    return (
-<section className={styles.new_message}>
-    <input type="text" className={styles.message_input}/>
-</section>
-    );
+interface AddMessageProps {
+  onAddMessage: (message: string) => void;
+}
+
+export default function AddMessage({ onAddMessage }: AddMessageProps): JSX.Element {
+  const [message, setMessage] = useState("");
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      onAddMessage(message);
+      setMessage("");
     }
+  };
+
+  return (
+    <section className={styles.new_message}>
+      <input
+        className={styles.message_input}
+        type="text"
+        placeholder="Type a message..."
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+        onKeyDown={handleKeyDown}
+      />
+    </section>
+  );
+}

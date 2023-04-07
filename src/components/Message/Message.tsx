@@ -1,9 +1,11 @@
 import React from "react";
 
-export default function Message({ author, message }: { author: string; message: string }) {
+
+
+export default function Message({ author, message }: { author: string; message: string }) : JSX.Element {
     return (
         <p>
-        <i>{author}</i>: {message}
+        wf
       </p>
     );
     }
