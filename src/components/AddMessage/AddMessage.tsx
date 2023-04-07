@@ -9,11 +9,14 @@ export default function AddMessage({ onAddMessage }: AddMessageProps): JSX.Eleme
   const [message, setMessage] = useState("");
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
+    if (e.key === "Enter" && message) {
       onAddMessage(message);
       setMessage("");
+    } else if (e.key === "Enter" && !message) {
+      alert("Please enter a message");
     }
   };
+  
 
   return (
     <section className={styles.new_message}>
@@ -25,6 +28,7 @@ export default function AddMessage({ onAddMessage }: AddMessageProps): JSX.Eleme
         onChange={(e) => setMessage(e.target.value)}
         onKeyDown={handleKeyDown}
       />
+
     </section>
   );
 }
