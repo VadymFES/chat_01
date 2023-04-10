@@ -23,6 +23,11 @@ io.on('connection', (socket) => {
     io.emit('users', connectedUsers);
   });
 
+  socket.on('new message', (message) => {
+    io.emit('message', message); // Send message to everyone
+    
+  });
+
   socket.on('disconnect', () => {
     console.log(socket.name + ' disconnected');
     connectedUsers = connectedUsers.filter(user => user !== socket.name);
