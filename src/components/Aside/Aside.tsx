@@ -1,37 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 import styles from './Aside.module.scss';
+import NamePrompt from '../NamePrompt/NamePrompt';
 
 interface User {
   id: string;
   name: string;
-}
-
-interface Props {
-  onNameSubmit: (name: string) => void;
-}
-
-function NamePrompt({ onNameSubmit }: Props): JSX.Element {
-  const [name, setName] = useState('');
-
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    if (name) {
-      onNameSubmit(name);
-    }
-  }
-
-  return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Enter your name:
-          <input type="text" value={name} onChange={e => setName(e.target.value)} />
-        </label>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  );
 }
 
 export default function Aside(): JSX.Element {
