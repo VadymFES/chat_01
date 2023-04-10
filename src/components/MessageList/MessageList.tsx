@@ -42,7 +42,13 @@ export default function MessageList(): JSX.Element {
     }
   }, [messages]);
 
+
   const addMessage = (message: string) => {
+    if (!userName) {
+      alert("Please set your name before sending a message.");
+      return;
+    }
+
     const timestamp = new Date().toLocaleTimeString();
     const newMessage = `${userName ? '<span style="color: ' + userColor + ';">' + userName + ': </span>' : ''}${message} <span style="font-size: 0.5em;">${timestamp}</span>` ;
     setMessages([...messages, newMessage]);
