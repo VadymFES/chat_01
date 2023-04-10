@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
 import Aside from '@/components/Aside/Aside'
-import AddMessage from '@/components/AddMessage/AddMessage'
 import MessageList from '@/components/MessageList/MessageList'
 
 
