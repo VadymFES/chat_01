@@ -35,6 +35,7 @@ export default function Aside(): JSX.Element {
     const socket = io('http://localhost:3001');
     socket.emit('new user', name);
     localStorage.setItem('userName', name);
+    window.location.reload();
   }
 
   return (
