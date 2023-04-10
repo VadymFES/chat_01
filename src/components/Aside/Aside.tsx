@@ -43,7 +43,7 @@ export default function Aside(): JSX.Element {
       {showNamePrompt && <NamePrompt onNameSubmit={handleNameSubmit} />}
       <ul>
         {users.map(user => (
-          <li key={user.id}>{user.name}</li>
+          <li className={styles.users_li} key={user.id}>{user.name}</li>
         ))}
       </ul>
     </aside>
