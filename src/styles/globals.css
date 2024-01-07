@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Press+Start+2P&display=swap');
+
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
+  font-family: 'Press Start 2P' !important;
 
 
   --foreground-rgb: 0, 0, 0;
